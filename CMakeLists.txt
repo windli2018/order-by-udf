@@ -1,0 +1,17 @@
+PROJECT(  custom_compare)
+cmake_minimum_required(VERSION 2.8)
+# Path for MySQL include directory
+#INCLUDE_DIRECTORIES("c:/mysql/include")
+INCLUDE_DIRECTORIES("/usr/include/mysql" "/usr/include/mariadb" "/usr/local/Cellar/mysql/8.0.16/include/mysql/" "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+ADD_DEFINITIONS("-DHAVE_DLOPEN -DSTANDARD")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+IF(WIN32)
+  ADD_LIBRARY(  custom_compare SHARED   custom_compare.cpp   custom_compare.def)
+ELSE(WIN32)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+  ADD_LIBRARY(  custom_compare SHARED   custom_compare.cpp)
+  if (APPLE)
+    set_property(TARGET   custom_compare PROPERTY SUFFIX ".so")
+  endif(APPLE)
+ENDIF(WIN32)
