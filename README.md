@@ -1,4 +1,6 @@
 # order-by-udf
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwindli2018%2Forder-by-udf.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwindli2018%2Forder-by-udf?ref=badge_shield)
+
 How to customize order by mysql udf function?   
 
 There are a few way to customize order in sql. Such as using a dictionary table,  using case when , using IF or Field function. Find more here https://www.designcise.com/web/tutorial/how-to-custom-sort-in-sql-order-by-clause  
@@ -21,3 +23,6 @@ order by sum(custom_compare(t1.f2,t2.f2));
 ```
 
 MySQL UDF:  https://dev.mysql.com/doc/refman/8.0/en/adding-udf.html  
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwindli2018%2Forder-by-udf.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwindli2018%2Forder-by-udf?ref=badge_large)
