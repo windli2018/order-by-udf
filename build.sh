@@ -2,7 +2,7 @@
 mkdir build
 pushd build
 cmake ..
-cmake --build $PWD --config Release
+cmake --build "$PWD" --config Release
 popd
 if [ -e /usr/local/Cellar/mysql/8.0.16/lib/plugin/ ]; then
   cp -avf build/lib*.so /usr/local/Cellar/mysql/8.0.16/lib/plugin/
